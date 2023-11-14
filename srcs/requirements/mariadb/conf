@@ -1,0 +1,6 @@
+[mysqld]
+datadir      = /etc/database
+user         = essadike
+socket       = /run/mysqld/mysqld.sock
+port         = 3306
+bind-address = 0.0.0.0
