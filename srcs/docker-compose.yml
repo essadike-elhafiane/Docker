@@ -16,10 +16,11 @@ services:
     build: ./requirements/mariadb
     image: mariadb
     restart: always 
+    env_file: .env
     ports:
       -  3306:3306
     volumes:
-      - /etc/database
+      - /var/lib/mysql
     networks:
       - web
   wordpress:
@@ -27,6 +28,7 @@ services:
     build: ./requirements/wordpress
     image: wordpress
     restart: always 
+    env_file: .env
     depends_on:
       - db
     ports:
@@ -37,3 +39,4 @@ services:
       - web
 networks:
   web:
+    driver: bridge 

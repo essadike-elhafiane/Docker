@@ -1,5 +1,5 @@
 [mysqld]
-datadir      = /etc/database
+datadir      = /var/lib/mysql
 user         = essadike
 socket       = /run/mysqld/mysqld.sock
 port         = 3306
