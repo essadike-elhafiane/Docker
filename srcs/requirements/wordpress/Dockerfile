@@ -5,18 +5,21 @@ RUN apt-get update && apt-get install -y \
     php \
     php-mysql \
     php-fpm \
-    wget
+    wget \
+    sendmail
 
 RUN service php7.4-fpm start
 
 COPY ./www.conf /etc/php/7.4/fpm/pool.d
 
+RUN sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/7.4/fpm/php.ini
 
 RUN wget -O /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
 RUN chmod +x /usr/local/bin/wp
 
 RUN mkdir -p /var/www/html
+
 COPY ./tools/wp-config.php /var/www
 
 WORKDIR /var/www/html
@@ -26,16 +29,15 @@ RUN wget https://wordpress.org/latest.tar.gz && \
     rm latest.tar.gz
 
 # Set ownership and permissions
-# RUN chown -R www-data:www-data /var/www/html && \
-#     chmod -R 755 /var/www/html
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod -R 755 /var/www/html
 
-COPY /tools/script.sh .
+COPY /tools/script.sh /usr/local/bin/
 
-RUN chmod +x ./script.sh
+RUN chmod +x /usr/local/bin/script.sh
 
 EXPOSE 9000
 
-ENTRYPOINT [ "./script.sh" ]
+ENTRYPOINT [ "/usr/local/bin/script.sh" ]
 
 CMD ["/usr/sbin/php-fpm7.4", "-F"]
-# "./script.sh"]
