@@ -1,9 +1,0 @@
-location / {
-    allow all;
-    root   /usr/share/nginx/html;
-    index  s.html;
-}
-location /index.php
-{
-    root /var/www/html;
-}
