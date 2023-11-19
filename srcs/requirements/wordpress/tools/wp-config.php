@@ -8,7 +8,7 @@ define( 'DB_USER', 'essadike' );
 define( 'DB_PASSWORD', '12345' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'mariadb' );
+define( 'DB_HOST', '' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
