@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y \
     wget \
     sendmail
 
-RUN service php7.4-fpm start
-
 COPY ./www.conf /etc/php/7.4/fpm/pool.d
+
+RUN service php7.4-fpm start
 
 RUN sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/7.4/fpm/php.ini
 
@@ -21,6 +21,8 @@ RUN chmod +x /usr/local/bin/wp
 RUN mkdir -p /var/www/html
 
 COPY ./tools/wp-config.php /var/www
+
+RUN chmod 777 /var/www/wp-config.php
 
 WORKDIR /var/www/html
 
@@ -33,6 +35,7 @@ RUN chown -R www-data:www-data /var/www/html && \
     chmod -R 755 /var/www/html
 
 COPY /tools/script.sh /usr/local/bin/
+
 
 RUN chmod +x /usr/local/bin/script.sh
 

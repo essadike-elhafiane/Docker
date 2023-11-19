@@ -1,8 +1,7 @@
 #!/bin/bash
-sleep(3);
-service mariadb start;
-mariadb -e "CREATE DATABASE IF NOT EXISTS \`${MARIADB_DATABASE}\`;"
-mariadb -e "CREATE USER IF NOT EXISTS \`${MARIADB_USER}\`@'%' IDENTIFIED BY '${MARIADB_PASSWORD}';"
-mariadb -e "GRANT ALL PRIVILEGES ON \`${MARIADB_DATABASE}\`.* TO \`${MARIADB_USER}\`@'%' IDENTIFIED BY '${MARIADB_PASSWORD}';"
-mariadb -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${MARIADB_ROOT_PASSWORD}';"
+
+mariadb -e "CREATE DATABASE IF NOT EXISTS wordpress;"
+mariadb -e "CREATE USER IF NOT EXISTS 'essadike'@'%' IDENTIFIED BY '12345';"
+mariadb -e "GRANT ALL PRIVILEGES ON wordpress.* TO '12345'@'%';"
 mariadb -e "FLUSH PRIVILEGES;"
+mariadb -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '12345';"
