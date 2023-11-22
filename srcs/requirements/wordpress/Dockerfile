@@ -39,6 +39,6 @@ RUN chmod +x /usr/local/bin/script.sh
 
 EXPOSE 9000
 
-ENTRYPOINT [ "/usr/local/bin/script.sh" ]
+CMD [ "/usr/local/bin/script.sh" ]
 
-CMD ["/usr/sbin/php-fpm7.4", "-F"]
+# CMD []
