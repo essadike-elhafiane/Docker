@@ -80,13 +80,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/eelhafia/data/mariadb
+      device: /Users/eelhafia/Desktop/Docker/data
       o: bind
   wordpressfiles:
     driver: local
     driver_opts:
       type: none
-      device: /home/eelhafia/data/wordpress
+      device: /Users/eelhafia/Desktop/Docker/data
       o: bind
 
 networks:
