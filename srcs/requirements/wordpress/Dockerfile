@@ -6,7 +6,9 @@ RUN apt-get update && apt-get install -y \
     php-mysql \
     php-fpm \
     wget \
-    sendmail
+    redis \
+    php-redis \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY ./www.conf /etc/php/7.4/fpm/pool.d
 
@@ -24,9 +26,7 @@ RUN mkdir -p /var/www/html
 
 WORKDIR /var/www/html
 
-RUN wget https://wordpress.org/latest.tar.gz && \
-    tar -xvzf latest.tar.gz --strip-components=1 && \
-    rm latest.tar.gz
+RUN 
 
 # Set ownership and permissions
 # RUN chown -R www-data:www-data /var/www/html && \

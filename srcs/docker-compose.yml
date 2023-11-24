@@ -1,5 +1,20 @@
 version: '3'
 services:
+    # bonus
+  redis:
+    container_name: redis
+    build: ./requirements/bonus/redis
+    depends_on:
+      - wordpress
+    ports:
+     - 6379:6379
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - wordpressfile:/var/www/html
+    networks:
+      - web
   mariadb:
     container_name: mariadb
     build: ./requirements/mariadb
