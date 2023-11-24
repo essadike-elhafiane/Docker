@@ -30,7 +30,15 @@ services:
     networks:
       - web
     restart: always
-
+  adminer:
+    build: ./requirements/bonus/adminer
+    restart: always
+    depends_on:
+      - mariadb
+    expose:
+     - "9000"
+    networks:
+      - web
 
     #mandatory
   mariadb:
@@ -77,17 +85,17 @@ services:
 
 volumes:
   mariadb:
-    driver: local
-    driver_opts:
-      type: none
-      device: /Users/eelhafia/Desktop/Docker/data
-      o: bind
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   device: /Users/eelhafia/Desktop/Docker/data
+    #   o: bind
   wordpressfiles:
-    driver: local
-    driver_opts:
-      type: none
-      device: /Users/eelhafia/Desktop/Docker/data
-      o: bind
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   device: /Users/eelhafia/Desktop/Docker/data
+    #   o: bind
 
 networks:
   web:
