@@ -3,10 +3,13 @@
 if [ ! -f "/etc/vsftpd.conf.bak" ]; then 
 
     mkdir -p /var/www/html 
-    # mkdir -p /etc/vsftpd/
+    mkdir -p /etc/vsftpd/
+    mkdir -p /var/run/vsftpd/empty
     cp /etc/vsftpd.conf /etc/vsftpd.conf.bak 
-    mv /tmp/vsftpd.conf /etc/vsftpd.conf 
-
+    mv /tmp/vsftpd.conf /etc/vsftpd/vsftpd.conf 
+    mkdir -p /var/run/vsftpd/empty
+    chown $FTP_USR:$FTP_USR /var/run/vsftpd/empty
+    chmod 755 /var/run/vsftpd/empty
     # Add new user
     adduser $FTP_USR --disabled-password 
     echo  "$FTP_USR:$FTP_PSWD" | /usr/sbin/chpasswd &> /dev/null 
