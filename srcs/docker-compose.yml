@@ -12,15 +12,34 @@ services:
     env_file:
       - .env
     volumes:
-      - wordpressfile:/var/www/html
+      - wordpressfiles:/var/www/html
     networks:
       - web
+  ftp:
+    container_name: ftp
+    build: ./requirements/bonus/ftp
+    volumes:
+      - "wordpressfiles:/var/www/html"
+    env_file:
+      - .env
+    depends_on:
+        - wordpress
+    ports:
+      - 21:21
+      - "21100-21110:21100-21110"
+    networks:
+      - web
+    restart: always
+
+
+    #mandatory
   mariadb:
     container_name: mariadb
     build: ./requirements/mariadb
     image: mariadb
     restart: always
-    env_file: .env
+    env_file: 
+      - .env
     ports:
       -  3306:3306
     volumes:
@@ -32,13 +51,14 @@ services:
     build: ./requirements/wordpress
     image: wordpress
     restart: always 
-    env_file: .env
+    env_file: 
+      - .env
     depends_on:
       - mariadb
     ports:
       - 9000:9000
     volumes:
-      - wordpressfile:/var/www/html
+      - wordpressfiles:/var/www/html
     networks:
       - web
   nginx:
@@ -51,13 +71,18 @@ services:
     depends_on:
       - wordpress
     volumes:
-      - wordpressfile:/var/www/html
+      - wordpressfiles:/var/www/html
     networks:
       - web
 
 volumes:
   mariadb:
-  wordpressfile:
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   device: /home/yakhoudr/data/wordpress
+    #   o: bind
+  wordpressfiles:
 
 networks:
   web:
