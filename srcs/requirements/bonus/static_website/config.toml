@@ -1,5 +1,5 @@
 baseURL = "https://localhost/static"
-theme = "shell"
+theme = "nightfall"
 paginate = 8
 canonifyURLs = true
 
