@@ -5,7 +5,7 @@ WORKDIR /var/hugo/static
 RUN    apt update && apt upgrade && apt-get install -y \
             hugo \
             git \
-            # shadow \
+             shadow \
  &&     rm -fr /var/cache/apt/*
 
 RUN hugo new site /var/hugo/static\ 
@@ -22,11 +22,12 @@ RUN hugo new site /var/hugo/static\
 # COPY conf /1.png /var/hugo/static/themes/nightfall/static/1.png 
 # COPY conf/2.png /var/hugo/static/themes/nightfall/static/2.png 
 
-EXPOSE 1337 
+EXPOSE 1337
 
-CMD [ "hugo" , . "server" , \ 
+CMD [ "hugo" , "server" , \ 
          "--bind=0.0.0.0" , \ 
          "--baseURL=https://localhost/static" , \ 
          "-p" , "1337" , \ 
-         "--logFile= /dev/stdout" , \ 
-        "--appendPort=false "]
+         "--logFile=/dev/stdout" , \ 
+        "--appendPort=false " ]
+

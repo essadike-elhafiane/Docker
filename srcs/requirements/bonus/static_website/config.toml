@@ -8,13 +8,13 @@ canonifyURLs = true
  [Params.Terminal]
   schema = "gruvbox_dark"
 
- userName = "ehazir"
- pcName = "debian"
- workDir = "ben"
+ userName = "eelhafia"
+ pcName = "debian:11"
+ workDir = "a"
  
  description = """
  Hi...
- I Am Enes HAZIR
+ I Am essadike
  This is My Portfolio!
  
  """
