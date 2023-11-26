@@ -39,7 +39,19 @@ services:
      - "9000"
     networks:
       - web
-
+  static_website:
+    container_name: static_website
+    build: ./requirements/bonus/static_website
+    restart: always
+    networks:
+      - web
+  hugo_service:
+    container_name: hugo_service
+    build: ./requirements/bonus/hugo_service
+    restart: always
+    networks:
+      - web
+    
     #mandatory
   mariadb:
     container_name: mariadb
@@ -78,6 +90,8 @@ services:
         - 443:443
     depends_on:
       - wordpress
+      - static_website
+      - hugo_service
     volumes:
       - wordpressfiles:/var/www/html
     networks:

@@ -1,0 +1,30 @@
+baseURL = "https://localhost/static"
+theme = "shell"
+paginate = 8
+canonifyURLs = true
+
+[params]
+ 
+ [Params.Terminal]
+  schema = "gruvbox_dark"
+
+ userName = "ehazir"
+ pcName = "debian"
+ workDir = "ben"
+ 
+ description = """
+ Hi...
+ I Am Enes HAZIR
+ This is My Portfolio!
+ 
+ """
+ 
+ [Params.Tree]
+ use = true
+ files = [
+ ["Python", "https://python.org/"],
+ ["Django", ""],
+ ["Hugo", "https://gohugo.io/"],
+ ["Docker", ""],
+ 
+ ]

@@ -17,7 +17,7 @@ COPY ./www.conf /etc/php/7.4/fpm/pool.d
 EXPOSE 9000
 
 
-STOPSIGNAL SIGQUIT
+# STOPSIGNAL SIGQUIT
 
 # Start PHP-FPM in non-daemon mode
 ENTRYPOINT ["php-fpm7.4", "--nodaemonize"]
