@@ -15,11 +15,10 @@ RUN hugo new site /var/hugo/static\
 && mkdir -p /var/hugo/info/content/posts 
 
 # conf/ designing a good markdown file and moving the config file
- COPY ./config.toml /var/hugo/static/config.toml 
-# COPY conf/docker.md /var/hugo/static/content/posts/docker.md 
-# COPY conf/about.md /var/hugo/static/content/about/index.md 
-# COPY conf /1.png /var/hugo/static/themes/nightfall/static/1.png 
-# COPY conf/2.png /var/hugo/static/themes/nightfall/static/2.png 
+COPY ./config.toml /var/hugo/static/config.toml 
+COPY ./tools/* /var/hugo/static/static
+COPY ./tools/index.html /var/hugo/static/layouts
+ 
 
 EXPOSE 1337
 
