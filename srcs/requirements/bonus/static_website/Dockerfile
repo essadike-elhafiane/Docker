@@ -7,14 +7,9 @@ RUN    apt update && apt upgrade && apt-get install -y \
             git \
  &&     rm -fr /var/cache/apt/*
 
-RUN hugo new site /var/hugo/static\ 
-  &&      cd /var/hugo/static\ 
-  && git clone https://github.com/LordMathis/hugo-theme-nightfall themes/nightfall \ 
-  && hugo new posts/docker.md\ 
-  && hugo -b https://localhost/static \ 
-&& mkdir -p /var/hugo/info/content/posts 
+RUN hugo new site /var/hugo/static\  
+  && hugo -b https://localhost/static 
 
-# conf/ designing a good markdown file and moving the config file
 COPY ./config.toml /var/hugo/static/config.toml 
 COPY ./tools/* /var/hugo/static/static
 COPY ./tools/index.html /var/hugo/static/layouts

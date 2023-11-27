@@ -1,1 +1,0 @@
-hello i'm essadike and this my portfolio

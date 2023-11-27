@@ -1,5 +1,4 @@
 baseURL = "https://localhost/static"
-theme = "nightfall"
 title = "Portfolio"
 paginate = 8
 canonifyURLs = true

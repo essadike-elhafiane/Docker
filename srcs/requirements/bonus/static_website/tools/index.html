@@ -26,11 +26,14 @@
       padding: 20px;
       text-align: center;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+      transition: 0.3s;
+      position: fixed;
+      top: 0;
+      width: 100%;
 
     }
     footer {
-      position: fixed;
+      /* position: fixed; */
       left: 0;
       bottom: 0;
       width: 100%;
@@ -47,6 +50,7 @@
       padding: 20px;
       margin: 20px;
       min-width: 100%;
+      margin-top: 70px;
       /* color: #fff; */
       min-height: 100vh;
       /* position: fixed; */
@@ -56,8 +60,8 @@
     
     .project {
       margin-bottom: 20px;
-      /* background-color: #fbf9f9; */
-      background-color: transparent;
+      background-color: #f0eaea;
+      /* background-color: transparent; */
       width: 100%;
       display: flex;
     }
@@ -96,7 +100,7 @@
       color: aliceblue;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       /* border: 50px; */
-      border: 2px solid #006100;
+      border: 2px solid #7767eb;
       
       /* margin-top: 20px; */
       border-bottom-left-radius: 10px;
@@ -105,28 +109,87 @@
       /* border-bottom: 10px; */
       border-top-right-radius: 100px;
     }
-    #d
+    .d
     {
       padding: 20px;
       background-color: rgb(255, 255, 255);
       margin: 20px;
+      border-radius: 4%;
       display: inline-block;
       
+    }
+    #dd
+    {
+      background-color: #f0eaea;
+      margin: 20px 0px 20px 0px;
+      width: 100%;
+      display: flex;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>My Portfolio</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar scroll</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Link
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- <h1>My Portfolio</h1> -->
   </header>
   
   <main role="main" class="container">
-    
+  <div id="dd">
+    <div class="d" ><h1>About Docker</h1>
+        <p>
+          Docker is an open-source platform that allows you to automate the deployment, scaling, and management of applications using containerization. Containerization is a lightweight alternative to traditional virtualization, where applications are packaged together with their dependencies and run in isolated environments called containers.
+        </p>
+        <h2>Key Concepts and Components</h2>
+        <h3>Docker Image</h3>
+        <p>
+          A Docker image is a lightweight, standalone, and executable software package that includes everything needed to run a piece of software, including the code, runtime, libraries, and system tools. Images are built from a set of instructions called a Dockerfile, which defines the configuration and dependencies of the image.
+        </p>
+        <h3>Container</h3>
+        <p>
+          A Docker container is an instance of a Docker image. Containers are isolated from each other and from the underlying host system, providing a consistent and reproducible environment for running applications. Each container runs as a separate process and has its own file system, network interfaces, and allocated system resources.
+        </p>
+    </div>
+  </div>
     <div class="project">
       <h3 id="hh">Docker</h3>
       
       <img id="img" src="d.png" alt="">
-      <div id="d" ><h1>About Docker</h1>
+      <div class="d" ><h1>About Docker</h1>
         <p>
           Docker is an open-source platform that allows you to automate the deployment, scaling, and management of applications using containerization. Containerization is a lightweight alternative to traditional virtualization, where applications are packaged together with their dependencies and run in isolated environments called containers.
         </p>
@@ -145,7 +208,7 @@
       <h3>Project 3</h3>
       <p>Description of Project 3.</p>
     </div> -->
-    <div class="sprite"></div>
+    <!-- <div class="sprite"></div> -->
   </main>
 
   <footer class="text-center bg-body-tertiary" >
