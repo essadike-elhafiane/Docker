@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sleep 3;
+sleep 10;
 if [ -f "./var/www/html/wp-config.php" ]; then
 	echo "File exists."
 else
