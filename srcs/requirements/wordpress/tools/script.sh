@@ -16,7 +16,7 @@ else
 	wp plugin update --all --allow-root
 	wp config set WP_REDIS_HOST redis --allow-root
   	wp config set WP_REDIS_PORT 6379 --raw --allow-root
- 	wp config set WP_CACHE_KEY_SALT eelhafia.42.fr --allow-root
+ 	wp config set WP_CACHE_KEY_SALT ${WP_URL} --allow-root
  	wp config set WP_REDIS_CLIENT phpredis --allow-root
 	# wp plugin activate redis-cache --allow-root
 	wp redis enable --force --allow-root
