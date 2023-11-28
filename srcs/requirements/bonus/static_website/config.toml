@@ -1,4 +1,4 @@
-baseURL = "https://eelhafia.42.fr/static"
+baseURL = "https://localhost/static"
 title = "Portfolio"
 paginate = 8
 canonifyURLs = true

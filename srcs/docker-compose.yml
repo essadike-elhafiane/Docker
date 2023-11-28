@@ -99,17 +99,17 @@ services:
 
 volumes:
   mariadb:
-    # driver: local
-    # driver_opts:
-    #   type: none
-    #   device: /home/eelhafia/data
-    #   o: bind
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/eelhafia/Desktop/Docker/data
+      o: bind
   wordpressfiles:
-    # driver: local
-    # driver_opts:
-    #   type: none
-    #   device: /home/eelhafia/data
-    #   o: bind
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/eelhafia/Desktop/Docker/data
+      o: bind
 
 networks:
   web:
