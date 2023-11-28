@@ -1,4 +1,4 @@
-baseURL = "https://localhost/info"
+baseURL = "https://eelhafia.42.fr/info"
 theme = "shell"
 paginate = 8
 canonifyURLs = true
