@@ -102,13 +102,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /Users/eelhafia/data/mariadb
+      device: /home/eelhafia/data/mariadb
       o: bind
   wordpressfiles:
     driver: local
     driver_opts:
       type: none
-      device: /Users/eelhafia/data/wordpress
+      device: /home/eelhafia/data/wordpress
       o: bind
 
 networks:
