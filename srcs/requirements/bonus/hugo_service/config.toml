@@ -1,29 +1,25 @@
-baseURL = "https://eelhafia.42.fr/info"
+baseURL = "https://eelhafia.42.fr/hugo"
 theme = "shell"
 paginate = 8
 canonifyURLs = true
 
 [params]
  
- [Params.Terminal]
-  schema = "gruvbox_dark"
+    [Params.Terminal]
+    schema = "gruvbox_dark"
 
- userName = "eelhafia"
- pcName = "debian:11"
- workDir = "/var/hugo/info"
- 
- description = """
- Hi...
- I Am essadike
- This is My Portfolio!
- 
- """
- 
- [Params.Tree]
- use = true
- files = [
- ["Python", "https://python.org/"],
- ["Hugo", "https://gohugo.io/"],
- ["Docker", ""],
- 
- ]
+    userName = "eelhafia"
+    pcName = "debian:11"
+    workDir = "/var/hugo/info"
+
+    description = """
+    Hi...
+    I Am essadike!
+
+    """
+[Params.Tree]
+    use = true
+    files = [
+        ["Hugo", "https://gohugo.io/"],
+        ["staticWebsite", "https://localhost/static"],
+    ]

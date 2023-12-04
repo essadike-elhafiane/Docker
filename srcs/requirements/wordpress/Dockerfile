@@ -20,17 +20,8 @@ RUN chmod +x /usr/local/bin/wp
 
 RUN mkdir -p /var/www/html
 
-# COPY ./tools/wp-config.php /var/www
-
-# RUN chmod 777 /var/www/wp-config.php
 
 WORKDIR /var/www/html
-
-RUN 
-
-# Set ownership and permissions
-# RUN chown -R www-data:www-data /var/www/html && \
-#     chmod -R 755 /var/www/html
 
 COPY /tools/script.sh /usr/local/bin/
 
@@ -40,5 +31,3 @@ RUN chmod +x /usr/local/bin/script.sh
 EXPOSE 9000
 
 CMD [ "/usr/local/bin/script.sh" ]
-
-# CMD []
