@@ -24,5 +24,4 @@ else
 	
 fi
 
-exec "$@"
 php-fpm7.4 -F
