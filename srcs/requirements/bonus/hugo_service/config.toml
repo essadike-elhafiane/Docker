@@ -1,25 +1,17 @@
 baseURL = "https://eelhafia.42.fr/hugo"
-theme = "shell"
-paginate = 8
-canonifyURLs = true
+title = 'service bonus docker'
+languageCode = "de"
+defaultContentLanguage = "de"
+paginate = "7"
+theme = "spectral"
 
 [params]
- 
-    [Params.Terminal]
-    schema = "gruvbox_dark"
+fancytitle = '<img height="128" src="/images/logo.svg" alt="Logo"/><br />essadike'
+copyright = "essadike elhafiane"
+startbuttonLink = "#contact"
 
-    userName = "eelhafia"
-    pcName = "debian:11"
-    workDir = "/var/hugo/info"
+[params.social]
+instagram = "essadike_elhafiane"
+facebook = "saddik.elhafiane"
+github = "essadike-elhafiane"
 
-    description = """
-    Hi...
-    I Am essadike!
-
-    """
-[Params.Tree]
-    use = true
-    files = [
-        ["Hugo", "https://gohugo.io/"],
-        ["staticWebsite", "https://localhost/static"],
-    ]
