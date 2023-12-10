@@ -8,7 +8,7 @@ RUN    apt update && apt upgrade && apt-get install -y \
  &&     rm -fr /var/cache/apt/*
 
 RUN hugo new site /var/hugo/static\  
-  && hugo -b https://localhost/static 
+  && hugo -b https://eelhafia.42.fr/static 
 
 COPY ./config.toml /var/hugo/static/config.toml 
 COPY ./tools/* /var/hugo/static/static
@@ -19,7 +19,7 @@ EXPOSE 1337
 
 CMD     ["hugo", "server", \
          "--bind=0.0.0.0", \
-         "--baseURL=https://localhost/static", \
+         "--baseURL=https://eelhafia.42.fr/static", \
          "-p", "1337", \
          "--logFile=/dev/stdout", \
         "--appendPort=false"]
